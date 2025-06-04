@@ -16,6 +16,24 @@
 // console.log(extractFileName('/home/user/images/photo.jpg'));
 
 
-const ecryptSentence = (setnence) => {
+// const encryptSentence = (setnence) => {
+  
+// };
+
+const checkBrackets = (str) => {
+  const components = str.split('');
+
+  const open_sk = components.filter((char) => char === '(');
+  const zakr_sk = components.filter((char) => char === ')');
+
+  if(open_sk.length > zakr_sk.length) return -1;
+  if(open_sk.length == zakr_sk.length) return 0;
+
+  
   
 };
+
+console.log(checkBrackets('((a + b) * (c - d))')); // 0
+console.log(checkBrackets(')a + b) * (c - d)(')); // 1
+console.log(checkBrackets('(a + b) * (c - d))')); // 18
+console.log(checkBrackets('((a + b) * (c - d)')); // -1
